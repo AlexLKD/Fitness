@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.user-list-container {
+    width: 70%;
+    margin: 2rem;
+    overflow-y: auto;
+    max-height: 70vh;
+    max-width: 30vw;
+    border: 1px solid #000;
+}
+
+.user-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-name {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-name:hover {
+    background-color: #f0f0f0;
+}
