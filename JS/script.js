@@ -1,24 +1,26 @@
 const userItems = document.querySelectorAll(".user-name");
 
 userItems.forEach((userItem) => {
-    userItem.addEventListener("click", function () {
+    userItem.addEventListener("click", async function () {
         const userId = this.getAttribute("data-user-id");
-        const xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                const programListContainer =
-                    document.querySelector(".program-list");
-                programListContainer.innerHTML = xhr.responseText;
 
-                // Réinitialise la liste des workouts
-                const workoutListContainer =
-                    document.querySelector(".workout-list");
-                workoutListContainer.innerHTML = "";
+        try {
+            const response = await fetch(`getPrograms.php?userId=${userId}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-        };
 
-        xhr.open("GET", `getPrograms.php?userId=${userId}`, true);
-        xhr.send();
+            const programListContainer =
+                document.querySelector(".program-list");
+            programListContainer.innerHTML = await response.text();
+
+            // Réinitialise la liste des workouts
+            const workoutListContainer =
+                document.querySelector(".workout-list");
+            workoutListContainer.innerHTML = "";
+        } catch (error) {
+            console.error("Fetch error:", error);
+        }
     });
 });
 
