@@ -16,21 +16,20 @@ session_start();
 <body>
 
     <?php
-    $query = $dbCo->prepare("SELECT USERS_ID, first_name, last_name FROM users");
+    $query = $dbCo->prepare("SELECT USERS_ID, first_name, last_name FROM users WHERE USERS_ID NOT IN (SELECT DISTINCT USERS_ID FROM program)");
     $query->execute();
-    $users = $query->fetchAll();
+    $usersWithoutProgram = $query->fetchAll();
     ?>
     <div class="user-list-container">
         <ul class="user-list">
-            <?php foreach ($users as $user) : ?>
-                <li class="user-name" <?= $user['USERS_ID'] ?>>
+            <?php foreach ($usersWithoutProgram as $user) : ?>
+                <li class="user-name" data-user-id="<?= $user['USERS_ID'] ?>">
                     <?= $user['first_name'] . " " . $user['last_name'] ?>
                 </li>
             <?php endforeach; ?>
         </ul>
     </div>
-
-    <a href="noprogram.php" class="btn-noprogram">Users without program</a>
+    <a href="index.php" class="btn-noprogram">Users with programs</a>
     <script src="JS/script.js"></script>
 </body>
 
