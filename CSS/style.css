@@ -12,6 +12,8 @@ body,
 nav,
 figure,
 p,
+ul,
+li,
 h1,
 h2,
 h3,
@@ -99,18 +101,46 @@ nav li.active {
     background-color: #f0f0f0;
 }
 
+/* EXERCICES  */
+
 /* PROGRAM LIST  */
 
 .program-list-container {
     width: 70%;
     margin: 2rem;
     overflow-y: auto;
-    max-height: 70vh;
+    max-height: 30vh;
     max-width: 30vw;
     border: 1px solid #000;
 }
 
 .program-list {
+    padding: 0;
+    margin: 0;
+}
+
+.program-name {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.program-name:hover {
+    background-color: #f0f0f0;
+}
+
+/* WORKOUT LIST  */
+
+.workout-list-container {
+    width: 70%;
+    margin: 2rem;
+    overflow-y: auto;
+    max-height: 30vh;
+    max-width: 30vw;
+    border: 1px solid #000;
+}
+
+.workout-list {
     padding: 0;
     margin: 0;
 }

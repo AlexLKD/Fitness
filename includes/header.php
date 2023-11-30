@@ -12,7 +12,8 @@
         <ul>
             <li class=""><a href="index.php">Users</a></li>
             <li><a href="programs.php">Programs</a></li>
-            <!-- <li><a href=""></a></li> -->
+            <li><a href="workout.php">Workout</a></li>
+            <li><a href="progress.php">Progress</a></li>
         </ul>
     </nav>
 </header>

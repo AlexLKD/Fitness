@@ -10,11 +10,9 @@ $query->execute([':userId' => $userId]);
 $programs = $query->fetchAll(PDO::FETCH_ASSOC);
 
 if (count($programs) > 0) {
-    $html = '<ul>';
     foreach ($programs as $program) {
-        $html .= '<li>' . $program['type'] . '</li>';
+        $html = '<li class="program-name" data-program-id="' . $program['PROGRAM_ID'] . '">' . $program['type'] . '</li>';
     }
-    $html .= '</ul>';
 } else {
     $html = '<li>' . 'This user has no associated program' . '</li>';
 }

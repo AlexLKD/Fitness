@@ -21,11 +21,11 @@ $users = $query->fetchAll();
             <?php endforeach; ?>
         </ul>
     </div>
-
     <div class="program-list-container">
-        <ul class="program-list">
-
-        </ul>
+        <ul class="program-list"></ul>
+    </div>
+    <div class="workout-list-container">
+        <ul class="workout-list"></ul>
     </div>
 </div>
 <script src="JS/script.js"></script>
