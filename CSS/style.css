@@ -1,13 +1,78 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+/* ul {
+    list-style: none;
+} */
+
+body,
+nav,
+figure,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
 }
+
+body {
+    font-family: "Roboto", Helvetica, sans-serif;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header {
+    background-color: #888;
+    padding: 3px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+}
+
+nav li {
+    background-color: #aaa;
+    padding: 8px;
+}
+
+nav li a {
+    color: #fff;
+    display: block;
+}
+
+nav li:hover,
+nav li:active {
+    background-color: #555;
+}
+
+nav li.active {
+    background-color: #555;
+}
+
+/* LISTS  */
 
 .lists {
     display: flex;
     justify-content: center;
 }
+
+/* USER LIST  */
 
 .user-list-container {
     width: 70%;
@@ -34,6 +99,8 @@ body {
     background-color: #f0f0f0;
 }
 
+/* PROGRAM LIST  */
+
 .program-list-container {
     width: 70%;
     margin: 2rem;
@@ -44,7 +111,6 @@ body {
 }
 
 .program-list {
-    list-style-type: none;
     padding: 0;
     margin: 0;
 }

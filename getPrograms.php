@@ -18,5 +18,4 @@ if (count($programs) > 0) {
 } else {
     $html = '<li>' . 'This user has no associated program' . '</li>';
 }
-
 echo $html;
