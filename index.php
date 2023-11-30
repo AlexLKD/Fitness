@@ -4,8 +4,6 @@ session_start();
 require 'includes/header.php';
 ?>
 
-
-
 <?php
 $query = $dbCo->prepare("SELECT USERS_ID, first_name, last_name FROM users");
 $query->execute();
